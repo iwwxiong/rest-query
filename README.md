@@ -36,6 +36,14 @@ A parser for rest query request. like no-sql select style.(/?select=id,name,auth
 {'start': 0, 'end': 5, 'limit': 5, 'page': 1}
 ```
 
+## Where operator
+
+just implement operators: `=`, `gt`, `gte`, `lt`, `lte`, `like`, `ilike`, `in`, `between`.
+
+## Support
+
+now we can use [Django ORM](https://github.com/dracarysX/django-rest-query), [Peewee](https://github.com/dracarysX/peewee-rest-query).
+
 ## License
 
 MIT
