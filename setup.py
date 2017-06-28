@@ -1,10 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import os
+import codecs
 import unittest
 from setuptools import setup, find_packages
 from setuptools.command.test import test as TestCommand
 import sys
+
+
+def read(name):
+    return codecs.open(os.path.join(os.path.dirname(__file__), name)).read()
 
 
 class MyTest(TestCommand):
@@ -15,7 +21,7 @@ class MyTest(TestCommand):
 
 setup(
     name='rest-query',
-    version='0.1.0',
+    version='0.1.1',
     license='MIT',
     description='A parser for rest query request. like no-sql select style',
     author='dracarysX',
@@ -25,15 +31,13 @@ setup(
     test_suite='nose.collector',
     tests_require=['nose'],
     classifiers=[
-        'Framework :: rest-query',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
-        'License :: MIT',
+        'License :: OSI Approved :: MIT License',
     ],
     keywords='rest, query, no-sql, parser',
-    long_description='A parser for rest query request. like no-sql select style.'
-                     '(/?select=id,name,author{*}&id=gte.20&order=id.desc).'
+    long_description=read('README.rst')
 )
