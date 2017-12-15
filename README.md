@@ -23,16 +23,16 @@ A parser for rest query request. like no-sql select style.(/?select=id,name,auth
         'limit': 5
     }
 > parser = BaseParamsParser(params_args=args)
-> parse.parse_select()
+> parser.parse_select()
 ['author.school.*', 'author.id', 'author.name', 'id', 'name']
-> parse.parse_where()
+> parser.parse_where()
 [
     {'field': 'id', 'value': '20', 'op': '>='}, 
     {'field': 'author.id', 'value': [10, 20, 30, 40, 50], 'op': 'in'}
 ]
-> parse.parse_order()
+> parser.parse_order()
 [{'id': 'desc'}]
-> parse.parse_paginate()
+> parser.parse_paginate()
 {'start': 0, 'end': 5, 'limit': 5, 'page': 1}
 ```
 
