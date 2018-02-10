@@ -1,4 +1,4 @@
-__version__ = '0.1.0'
+__version__ = '0.1.2'
 
 from .serializer import BaseSerializer
 from .query import QueryBuilder

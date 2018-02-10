@@ -21,7 +21,7 @@ class MyTest(TestCommand):
 
 setup(
     name='rest-query',
-    version='0.1.1',
+    version='0.1.2',
     license='MIT',
     description='A parser for rest query request. like no-sql select style',
     author='dracarysX',
