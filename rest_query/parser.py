@@ -25,7 +25,7 @@ def cache_property(key=None):
 
 class ParserException(Exception):
     pass
-        
+
 
 class BaseParamsParser(object):
     """
@@ -45,7 +45,7 @@ class BaseParamsParser(object):
 
     def __init__(self, params_args=None, **kwargs):
         self.params_args = params_args
-        
+
     def _embed_args_split(self, value):
         """
         >>> _embed_args_split('id,name,author{id,name,school{id,name}}')
@@ -89,6 +89,7 @@ class BaseParamsParser(object):
     def split_where(self):
         _wheres = []
         for field, values in self.where_args.items():
+            values = str(values)
             _value = values.split('.')
             operator, value = _value[0], '.'.join(_value[1:])
             if operator not in self.operator_list:
